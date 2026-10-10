@@ -1,0 +1,561 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --navy: #142c2a;
+  --green: #174d3b;
+  --green2: #23664d;
+  --gold: #f2bd36;
+  --ink: #213431;
+  --muted: #61716c;
+  --line: #dce6e1;
+  --paper: #f7faf8;
+  --white: #ffffff;
+  --red: #b93838;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  color: var(--ink);
+  background: #ffffff;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--green2);
+}
+
+.site-header {
+  min-height: 76px;
+  padding: 0 max(24px, calc((100% - 1120px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand {
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  text-decoration: none;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.brand span {
+  color: #c89516;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-nav a,
+.footer-links a {
+  text-decoration: none;
+  color: #3b504a;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: #b17c00;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 23px;
+  height: 2px;
+  background: var(--green);
+  margin: 5px;
+}
+
+/* Home hero */
+.hero {
+  padding: 58px 24px 50px;
+  text-align: center;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    #e8f4ed 0,
+    #ffffff 64%
+  );
+  border-bottom: 1px solid var(--line);
+}
+
+.hero > * {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a47708;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: clamp(30px, 4.5vw, 48px);
+  line-height: 1.17;
+  letter-spacing: -1.7px;
+  color: #102d26;
+  margin-bottom: 18px;
+}
+
+.hero-copy {
+  font-size: 17px;
+  color: #5a6c65;
+  max-width: 670px;
+  margin-bottom: 26px;
+}
+
+/* Your AR777 logo image */
+.hero-logo-image {
+  display: block;
+  width: min(340px, 82vw);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 22px;
+  margin: 28px auto 22px;
+  box-shadow: 0 16px 36px #0b241b24;
+}
+
+.section-kicker {
+  font-weight: 700;
+  color: #344d44;
+  margin-bottom: 17px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.button {
+  min-height: 52px;
+  padding: 13px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px #112b211a;
+}
+
+.button-primary {
+  background: var(--green);
+  border: 1px solid var(--gold);
+  color: #ffcf43;
+}
+
+.button-secondary {
+  background: #e4b83d;
+  border: 1px solid #c99c20;
+  color: #243a2f;
+}
+
+.small-note {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #73817c;
+  margin-top: 22px;
+  max-width: 650px;
+}
+
+/* General content */
+.content-section {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 62px 24px;
+}
+
+.intro {
+  max-width: 860px;
+}
+
+h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  color: #18382e;
+  margin-bottom: 13px;
+}
+
+.content-section p {
+  color: #64736e;
+}
+
+.section-heading {
+  margin-bottom: 25px;
+}
+
+.section-heading > p {
+  max-width: 700px;
+  margin-bottom: 0;
+}
+
+/* Feature cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.feature-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px #18382e08;
+}
+
+.feature-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: #e7f3eb;
+  color: #1b6a45;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 17px;
+}
+
+.feature-card h3,
+.steps h3 {
+  font-size: 17px;
+  margin-bottom: 7px;
+  color: #1a3b30;
+}
+
+.feature-card p,
+.steps p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* App details table */
+.details-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 440px;
+}
+
+.details-table th,
+.details-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.details-table th {
+  background: #174d3b;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.details-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.details-table td:first-child {
+  width: 42%;
+  color: #465b53;
+}
+
+.details-table td:last-child {
+  font-weight: 600;
+  color: #213b31;
+}
+
+/* Installation steps */
+.steps-section {
+  padding-top: 35px;
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 15px;
+}
+
+.steps li {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+}
+
+.steps li > span {
+  font-weight: 800;
+  color: #b98709;
+  font-size: 20px;
+}
+
+.steps h3 {
+  margin-top: 2px;
+}
+
+/* Responsible gaming notice */
+.notice {
+  max-width: 992px;
+  margin: 0 auto 65px;
+  padding: 26px 28px;
+  display: flex;
+  gap: 18px;
+  background: #fff9e9;
+  border: 1px solid #efd78b;
+  border-radius: 16px;
+}
+
+.notice-symbol {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #f2c64e;
+  color: #382d0d;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.notice h2 {
+  font-size: 23px;
+  color: #6d4b00;
+}
+
+.notice p {
+  color: #695b3c;
+  margin-bottom: 8px;
+}
+
+.notice a {
+  font-size: 14px;
+  font-weight: 800;
+  color: #765400;
+}
+
+/* Footer */
+.site-footer {
+  padding: 35px 24px 28px;
+  text-align: center;
+  background: #102e25;
+  color: #d6e5dd;
+}
+
+.footer-brand {
+  color: #ffffff;
+  display: inline-block;
+  margin-bottom: 17px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  color: #d6e5dd;
+}
+
+.site-footer p {
+  font-size: 12px;
+  margin: 6px 0;
+  color: #b5c9bf;
+}
+
+.site-footer .footer-small {
+  color: #8ea99a;
+  max-width: 680px;
+  margin: 8px auto 0;
+}
+
+/* Disclaimer page */
+.legal-main {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 58px 24px 70px;
+}
+
+.legal-main h1 {
+  margin-top: 8px;
+}
+
+.legal-lead {
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.legal-card {
+  padding: 22px 24px;
+  margin: 15px 0;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #ffffff;
+}
+
+.legal-card h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.legal-card p {
+  margin-bottom: 0;
+  color: #5c6c65;
+}
+
+.warning-card {
+  border-color: #f0c5b9;
+  background: #fff7f5;
+}
+
+.warning-card h2 {
+  color: var(--red);
+}
+
+.back-button {
+  margin-top: 16px;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .site-header {
+    min-height: 70px;
+    padding: 0 18px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 69px;
+    left: 0;
+    right: 0;
+    padding: 15px 22px 22px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 10px 20px #102e2510;
+    align-items: stretch;
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 12px 0;
+    border-bottom: 1px solid #edf1ee;
+  }
+
+  .site-nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .hero {
+    padding: 43px 18px 39px;
+  }
+
+  .hero-logo-image {
+    width: min(300px, 82vw);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .content-section {
+    padding: 44px 18px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 21px;
+  }
+
+  .details-table th,
+  .details-table td {
+    padding: 13px 12px;
+    font-size: 13px;
+  }
+
+  .notice {
+    margin: 0 18px 45px;
+    padding: 21px 18px;
+    gap: 12px;
+  }
+
+  .legal-main {
+    padding: 42px 18px 55px;
+  }
+
+  .legal-card {
+    padding: 19px 17px;
+  }
+}
